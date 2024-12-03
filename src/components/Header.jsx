@@ -8,7 +8,7 @@ const Header = () => {
       <Link to="/" className="logo">TSHP</Link>
       <nav>
         <Link to="/courses" className="nav-link">Courses</Link>
-        <Link to="/login" className="nav-link">Login</Link>
+        <Link to="/login" className="nav-link">Sign-in</Link>
       </nav>
     </header>
   );
