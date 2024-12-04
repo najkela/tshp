@@ -9,20 +9,15 @@
   background-size: cover;
 }
 
-.row {
-  width: 100%;
-  padding: 0px, 80px;
-}
-
 .content {
   width: 100%;
   min-height: 100vh;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 3rem;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: left;
   flex-direction: column;
 }
 

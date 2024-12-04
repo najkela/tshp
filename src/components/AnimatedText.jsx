@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import AnimatedWord from './AnimatedWord.jsx';
 
 const ScrollRevealText = () => {
   const texts = [" ", "Teaching", "Sharing", "Helping", "Programming"]; // Reči koje će se prikazivati
@@ -18,23 +18,11 @@ const ScrollRevealText = () => {
   }, [texts.length]);
 
   return (
-    <div>
-      <h1>
+    <>
         {texts.map((text, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0 }}
-            animate={visibleIndex >= index ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }}
-            transition={{ duration: 0.5 }}
-            style={{
-              margin: "10px 0"
-            }}
-          >
-            {text}
-          </motion.div>
+            <AnimatedWord key={index} text={text} isVisible={visibleIndex >= index} />
         ))}
-      </h1>
-    </div>
+    </>
   );
 };
 
