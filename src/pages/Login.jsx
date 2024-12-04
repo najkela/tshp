@@ -5,8 +5,13 @@ import {
   doSignInUserWithEmailAndPassword,
   doSignInWithGoogle,
 } from '../auth';
-import { Navigate } from 'react-router-dom';
+import { auth } from '../firebase-config';
+import { updateProfile } from 'firebase/auth';
 import { useNavigate } from "react-router";
+import { doc } from 'firebase/firestore';
+import { setDoc } from 'firebase/firestore';
+import { db } from '../firebase-config';
+
 
 const Login = () => {
   let navigate = useNavigate();
@@ -16,6 +21,21 @@ const Login = () => {
   const [repeatPassword, setRepeatPassword] = useState('');
   const [isRegistering, setIsRegistering] = useState(false);
   const [error, setError] = useState('');
+
+  const saveUserToFirestore = async (user) => {
+    try {
+      const userDocRef = doc(db, "users", user.uid);
+      await setDoc(userDocRef, {
+        email: user.email,
+        username: user.displayName || "Anonimni kul korisnik",
+        score: 0,
+      });
+      console.log("Korisnik je sačuvan u Firestore!");
+    } catch (error) {
+      console.error("Greška pri čuvanju korisnika u Firestore:", error);
+    }
+  };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +47,17 @@ const Login = () => {
         return;
       }
       try {
-        await doCreateUserWithEmailAndPass(email, password);
+
+        const userCredential = await doCreateUserWithEmailAndPass(email, password);
+        const user = userCredential.user;
+
+
+        await updateProfile(auth.currentUser, {
+          displayName: username, // Postavljanje displayName na korisničko ime
+        });
+
+        await saveUserToFirestore(user);
+
         navigate('/');
       } catch (err) {
         console.error('Greška pri registraciji:', err);
