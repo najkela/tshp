@@ -5,9 +5,9 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <p>Contact us: <a href="mailto:team@example.com">team@example.com</a></p>
-        <p>Team Name: The Innovators</p>
-        <small>© {new Date().getFullYear()} The Innovators. All rights reserved.</small>
+        <p>Contact us: <a href="mailto:nesto@nestodrugo.com">nesto@nestodrugo.com</a></p>
+        <p>Team Name: Trica shtikla penzija</p>
+        <small>© 2024 TSHP. All rights reserved.</small>
       </div>
     </footer>
   );
