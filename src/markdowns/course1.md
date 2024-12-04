@@ -1,2 +1,0 @@
-nesto
-# bilo sta
