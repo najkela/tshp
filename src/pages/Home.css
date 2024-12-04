@@ -1,89 +1,98 @@
-/* Osnovni stilovi za home komponentu */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
 .home {
-  font-family: Arial, sans-serif;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background-color: #f4f4f9;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+
 }
 
-/* Stil za header */
-.home-header {
-  text-align: center;
-  background-color: #4caf50;
-  color: white;
-  padding: 2rem;
-}
-
-.home-header h1 {
-  margin: 0;
-  font-size: 3rem;
-}
-
-.home-header h2 {
-  margin: 0.5rem 0;
-  font-size: 1.5rem;
-}
-
-/* Stil za glavni sadržaj */
-.home-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-}
-
-/* Deskripcija ispod naslova */
-.description {
-  max-width: 800px;
-  text-align: center;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-}
-
-/* Grid container za funkcije */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
+.container {
   width: 100%;
-  margin-top: 3rem;
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/landingPage.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-.grid-item {
-  background-color: #ffffff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.row {
+  width: 100%;
+  padding: 0px, 80px;
+
 }
 
-.grid-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px, 0px;
+  position: relative;
+  z-index: 1;
 }
 
-.grid-item h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.grid-item p {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #666;
+.navbar ul li {
+  list-style: none;
 }
 
-/* Stil za footer */
-.home-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem;
+.navbar ul li a {
+  padding: 10px, 18px;
+  border-radius: 5px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.navbar ul li a:hover {
+  background-color: #000;
+
+}
+
+.navbar h1 {
+  font-family: 'Quicksand', sans-serif;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-left: 10px;
+
+}
+
+.content {
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content h1 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+
+  font-size: 45px;
+  color: #fff;
+
+}
+
+.content p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  color: #fff;
 }

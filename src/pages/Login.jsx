@@ -5,8 +5,11 @@ import {
   doSignInUserWithEmailAndPassword,
   doSignInWithGoogle,
 } from '../auth';
+import { auth } from '../firebase-config';
+import { updateProfile } from 'firebase/auth';
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from "react-router";
+
 
 const Login = () => {
   let navigate = useNavigate();
@@ -27,7 +30,15 @@ const Login = () => {
         return;
       }
       try {
+        
         await doCreateUserWithEmailAndPass(email, password);
+
+        await updateProfile(auth.currentUser, {
+          displayName: username, // Postavljanje displayName na korisničko ime
+        });
+
+        await auth.currentUser.reload();
+        
         navigate('/');
       } catch (err) {
         console.error('Greška pri registraciji:', err);
