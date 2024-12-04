@@ -44,7 +44,7 @@ body {
 
 .course-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(15, 15, 15, 0.2);
 }
 
 .course-card h3 {
@@ -67,8 +67,8 @@ body {
   width: auto;
   padding: 0.8rem 2rem;
   font-size: 1.1rem;
-  color: #fff;
-  background-color: #2F8575;
+  color: #03102C;
+  background-color: #FFF;
   border: none;
   border-radius: 30px;
   cursor: pointer;
