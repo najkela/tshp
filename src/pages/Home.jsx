@@ -46,7 +46,9 @@ const Home = () => {
           </ul>
         </nav>
         <div className='content'>
-          <AnimatedText />
+          <div className='moto'>
+            <AnimatedText />
+          </div>
           <h1>
             Welcome to the site for practising programming;
           </h1>

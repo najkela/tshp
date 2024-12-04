@@ -81,9 +81,9 @@
 
 .content {
   width: 100%;
-  min-height: 100vh;
+  min-height: 20rem;
   position: absolute;
-  top: 0;
+  top: 10rem;
   left: 3rem;
   display: flex;
   justify-content: center;
@@ -91,17 +91,18 @@
   flex-direction: column;
 }
 
+.moto {
+  align-self: center;
+}
+
 .content h1 {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-
-  font-size: 45px;
+  font-size: 2rem;
   color: #fff;
-
 }
 
 .content p {
   font-family: 'Quicksand', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   color: #fff;
 }
