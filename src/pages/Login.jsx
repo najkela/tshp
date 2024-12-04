@@ -5,8 +5,11 @@ import {
   doSignInUserWithEmailAndPassword,
   doSignInWithGoogle,
 } from '../auth';
+import { Navigate } from 'react-router-dom';
+import { useNavigate } from "react-router";
 
 const Login = () => {
+  let navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -25,7 +28,7 @@ const Login = () => {
       }
       try {
         await doCreateUserWithEmailAndPass(email, password);
-        alert('Uspešno ste se registrovali!');
+        navigate('/');
       } catch (err) {
         console.error('Greška pri registraciji:', err);
         setError(err.message);
@@ -33,7 +36,7 @@ const Login = () => {
     } else {
       try {
         await doSignInUserWithEmailAndPassword(email, password);
-        alert('Uspešno ste se prijavili!');
+        navigate('/');
       } catch (err) {
         console.error('Greška pri prijavi:', err);
         setError(err.message);
@@ -45,7 +48,7 @@ const Login = () => {
     setError('');
     try {
       await doSignInWithGoogle();
-      alert('Uspešno ste se prijavili putem Google-a!');
+      navigate('/');
     } catch (err) {
       setError(err.message);
     }
