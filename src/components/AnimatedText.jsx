@@ -8,7 +8,7 @@ const ScrollRevealText = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const newVisibleIndex = Math.min(Math.floor(scrollY / 30), texts.length - 1);
+      const newVisibleIndex = Math.min(Math.floor(scrollY / 40), texts.length - 1);
       setVisibleIndex(newVisibleIndex);
     };
 

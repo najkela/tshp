@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/authContext';
 import { doc, getDoc } from 'firebase/firestore'; // Import Firestore funkcija
 import { db } from '../firebase-config'; // Tvoj Firestore config
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const { currentUser, userLoggedIn } = useAuth();
@@ -30,6 +31,12 @@ const Home = () => {
     fetchUsername();
   }, [currentUser]);
 
+  const navigate = useNavigate();
+
+  const handleButtonClick = (path) => {
+    navigate(`/${path}`);
+  };
+
   return (
     <div className="container">
       <div className='row'>
@@ -46,12 +53,30 @@ const Home = () => {
           </ul>
         </nav>
         <div className='content'>
+          <h1>
+            Welcome to the TSHP;
+          </h1>
           <div className='moto'>
             <AnimatedText />
           </div>
           <h1>
-            Welcome to the site for practising programming;
+            On this site you can learn, practise and much more!
           </h1>
+          <p>
+            Here will go some description...
+          </p>
+          <div className='button-grid'>
+            <div className="button-card">
+              <h3>Enjoy learning</h3>
+              <p>Here you can learn new lections.</p>
+              <button onClick={() => handleButtonClick('courses')}>View courses!</button>
+            </div>
+            <div className='button-card'>
+              <h3>Enjoy practising</h3>
+              <p>Here you can practise new lections.</p>
+              <button onClick={() => handleButtonClick('')}>View tasks!</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
