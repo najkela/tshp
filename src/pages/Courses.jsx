@@ -17,9 +17,9 @@ const Courses = () => {
       </h2>
       <div className="courses-grid">
         <div className="course-card">
-          <h3>Course 1</h3>
-          <p>Details 1</p>
-          <button onClick={() => handleButtonClick('course1')}>View Details</button>
+          <h3>Linked list</h3>
+          <p>In this course you will learn how to make, use and edit linked lists.</p>
+          <button onClick={() => handleButtonClick('course1')}>Start course!</button>
         </div>
         <div className="course-card">
         <h3>Course</h3>

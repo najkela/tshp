@@ -1,21 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import React from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
-const Course1 = ({ courseFile }) => {
-  const [markdownContent, setMarkdownContent] = useState('');
+// Importuj Markdown fajl kao string
+import markdownContent from "../../markdowns/course1.md";
 
-  useEffect(() => {
-    fetch(courseFile)
-      .then((response) => response.text())
-      .then((text) => setMarkdownContent(text));
-  }, [courseFile]);
-
+const MarkdownViewer = () => {
   return (
-    <div className="course-details">
-      <ReactMarkdown children={markdownContent} remarkPlugins={[remarkGfm]} />
+    <div>
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+        {markdownContent}
+      </ReactMarkdown>
     </div>
   );
 };
 
-export default Course1;
+export default MarkdownViewer;

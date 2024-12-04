@@ -13,9 +13,9 @@ const Main = () => {
     <main>
       <Routes>
 
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/courses" element={<Courses />} />
-        <Route path="/" element={<Home />} />
 
         <Route path='/courses/course1' element={<Course1 courseFile='../markdowns/course1.md' />} />
 
