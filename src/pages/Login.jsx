@@ -147,11 +147,7 @@ const Login = () => {
           </div>
         )}
         <button type="submit">{isRegistering ? 'Registrujte se' : 'Prijavi se'}</button>
-        {!isRegistering && (
-          <button type="button" onClick={handleGoogleSignIn} className="google-sign-in">
-            Prijavite se putem Google-a
-          </button>
-        )}
+
       </form>
 
       <p>
