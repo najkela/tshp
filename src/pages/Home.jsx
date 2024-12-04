@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './Home.css';
 import AnimatedText from '../components/AnimatedText.jsx';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/authContext';
-import { doc, getDoc } from 'firebase/firestore'; // Import Firestore funkcija
-import { db } from '../firebase-config'; // Tvoj Firestore config
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../firebase-config';
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebase-config';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const { currentUser, userLoggedIn } = useAuth();
   const [username, setUsername] = useState('');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [error, setError] = useState('');
+  const dropdownRef = useRef(null); // Referenca za dropdown
 
   useEffect(() => {
     const fetchUsername = async () => {
@@ -37,19 +42,57 @@ const Home = () => {
     navigate(`/${path}`);
   };
 
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen); // Togluje dropdown
+  };
+
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      setError('');
+    } catch (error) {
+      setError('Greška pri izlogovanju!');
+    }
+  };
+
+  const handleOutsideClick = (e) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+      setIsDropdownOpen(false); // Zatvori dropdown
+    }
+  };
+
+  useEffect(() => {
+    if (isDropdownOpen) {
+      document.addEventListener('mousedown', handleOutsideClick);
+    } else {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick); // Čišćenje eventa
+    };
+  }, [isDropdownOpen]);
+
   return (
     <div className="container">
       <div className='row'>
         <nav className='navbar'>
           <Link to="/" className="logo"><h1>TSHP</h1></Link>
           <ul>
-            <li><Link to="/courses" className="nav-link">Lekcije</Link></li>
+            <li><Link to="/courses" className="nav-link username">Lekcije</Link></li>
             {!userLoggedIn ? (
-              <li><Link to="/login" className="nav-link">Prijavite se</Link></li>
+              <li><Link to="/login" className="nav-link username">Prijavite se</Link></li>
             ) : (
-              <li><span>{username}</span></li>
+              <li className="dropdown" ref={dropdownRef}>
+                <span onClick={toggleDropdown} className="username">{username}</span>
+                {isDropdownOpen && (
+                  <div className="dropdown-menu">
+                    <p>Score: {currentUser?.score}</p>
+                    <button onClick={handleSignOut} className="dropdown-item">Sign Out</button>
+                  </div>
+                )}
+              </li>
             )}
-
           </ul>
         </nav>
         <div className='content'>
