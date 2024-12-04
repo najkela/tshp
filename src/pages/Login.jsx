@@ -137,26 +137,9 @@ const Login = () => {
               required
             />
           </div>
-          {isRegistering && (
-            <div className="form-group">
-              <label htmlFor="repeat-password">Ponovno unesite lozinku:</label>
-              <input
-                type="password"
-                id="repeat-password"
-                value={repeatPassword}
-                onChange={(e) => setRepeatPassword(e.target.value)}
-                placeholder="Ponovno unesite lozinku"
-                required
-              />
-            </div>
-          )}
-          <button type="submit">{isRegistering ? 'Registrujte se' : 'Prijavi se'}</button>
-          {!isRegistering && (
-            <button type="button" onClick={handleGoogleSignIn} className="google-sign-in">
-              Prijavite se putem Google-a
-            </button>
-          )}
-        </form>
+        <button type="submit">{isRegistering ? 'Registrujte se' : 'Prijavi se'}</button>
+
+      </form>
 
         <p>
           {isRegistering ? 'Već imate nalog? ' : 'Nemate nalog? '}
