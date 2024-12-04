@@ -51,12 +51,29 @@
   font-size: 16px;
   color: #fff;
   text-decoration: none;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
-.navbar ul li a:hover {
-  background-color: #000;
 
+.navbar ul li span {
+  padding: 10px, 18px;
+  border-radius: 5px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+
+.logo {
+  font-family: 'Quicksand', sans-serif;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .navbar h1 {
