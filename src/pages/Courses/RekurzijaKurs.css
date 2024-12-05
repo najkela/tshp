@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+.course-container {
+    display: flex;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.sidebar {
+    width: 20%;
+    height: 100%;
+    margin-left: 20px;
+    display: block;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.sidebar h2 {
+    font-size: 2rem;
+}
+
+.sidebar ul {
+    text-align: left;
+    color: #fff;
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar li a {
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar ul li a:hover {
+    color: #2F8575;
+}
+
+.course-content {
+    text-align: left;
+    width: 70%;
+    margin-left: 20px;
+    
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.course-content h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1000;
+
+}
+
+.examples-container {
+    display: flex;
+    gap: 20px;
+}
+
+.left-section {
+    width: 45%;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.right-section {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.right-section img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.image-container {
+    width: 300px;
+    /* širina slike */
+    height: 200px;
+    /* visina slike */
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    /* ako želiš zaobljene ivice */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #2F8575;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.open .sloj {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: top;
+    animation: open 1s ease forwards;
+}
+
+.open .sloj:nth-child(1) {
+    background: #000;
+    z-index: 3;
+}
+
+.open .sloj:nth-child(2) {
+    background: #01102A;
+    z-index: 2;
+    animation-delay: 1s;
+}
+
+.open .sloj:nth-child(3) {
+    background: #236962;
+    z-index: 1;
+    animation-delay: 1.5s;
+}
+
+@keyframes open {
+    0% {
+        transform: scaleY(1)
+    }
+
+    100% {
+        transform: scaleY(0)
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .course-content {
+        width: 100%;
+    }
+}

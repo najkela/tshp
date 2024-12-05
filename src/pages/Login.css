@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+
+body {
+  background: linear-gradient(180deg, #03102C, #2F8575);
+  /* Gradijent pozadine od tamno plave ka zelenoj */
+  color: #fff;
+  /* Osnovna boja teksta je bela */
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: linear-gradient(180deg, #03102C, #2F8575);
+  /* Tamno plava pozadina za celu stranicu */
+  padding: 2rem;
+}
+
+h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 2.5rem;
+  color: #fff;
+  /* Bela boja za tekst */
+  margin-bottom: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Poluproziran beli background */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  /* Softni shadow za karticu */
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* Beli border sa 60% opacity */
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  font-family: 'Quicksand', sans-serif;
+
+  font-size: 1rem;
+  color: #fff;
+  /* Bela boja za labelu */
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+input {
+  font-family: 'Quicksand', sans-serif;
+
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  ;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #fff;
+  width: 100%;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Poluprozirna pozadina za inpute */
+}
+
+input:focus {
+  outline: none;
+  border-color: #4CAF50;
+  /* Zeleni border prilikom fokusa */
+  background-color: rgba(255, 255, 255, 0.5);
+  /* Bele pozadine kada je u fokusu */
+}
+
+button {
+  font-family: 'Quicksand', sans-serif;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  /* Dugme u boji koju smo ranije koristili */
+  color: #03102C;
+  border: none;
+  border-radius: 30px;
+  /* Pill-shaped dugme */
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s, transform 0.2s ease;
+  width: 100%;
+  text-transform: uppercase;
+  /* Uppercase text za dugme */
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background-color: #246f62;
+  /* Tamnija nijansa pri hover-u */
+  transform: translateY(-3px);
+  /* Subtle hover effect */
+}
+
+button:active {
+  transform: translateY(1px);
+  /* Efekat kada je dugme pritisnuto */
+}
+
+.switch-link {
+  color: #4CAF50;
+  /* Zeleni link za prelaz */
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.switch-link:hover {
+  text-decoration: underline;
+}
+
+.google-sign-in {
+  margin-top: 15px;
+  background-color: #db4437;
+  padding: 1rem;
+  border-radius: 30px;
+  /* Zaobljeni ivice */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.google-sign-in:hover {
+  background-color: #c5362b;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+  position: relative;
+  z-index: 1;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.navbar ul li {
+  list-style: none;
+
+}
+
+.navbar ul li a {
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.navbar ul li span {
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.logo {
+  font-family: 'Quicksand', sans-serif;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.navbar h1 {
+  font-family: 'Quicksand', sans-serif;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+}
+
+.username:hover {
+  background-color: #246f62;
+  /* Tamnija nijansa */
+}
