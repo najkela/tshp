@@ -12,6 +12,11 @@ const Courses = () => {
 
   return (
     <div className="courses-container">
+      <div className='open'>
+        <div class="sloj"></div>
+        <div class="sloj"></div>
+        <div class="sloj"></div>
+      </div>
       <h2 className="courses-title">Kursevi</h2>
       <div className="courses-grid">
         <div className="course-card">
