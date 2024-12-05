@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Home.css';
-import AnimatedText from '../components/AnimatedText.jsx';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/authContext';
 import { doc, getDoc } from 'firebase/firestore';
