@@ -277,7 +277,7 @@ const RekurzijaKurs = () => {
                                 </>
                             ) : (
                                 <p>
-                                    Morate biti ulogovani
+                                    <Link to="/login" className="nav-link username"><button type="submit">Log-in to send messages</button></Link>
                                 </p>
                             )}
                         </div>

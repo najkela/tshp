@@ -14,6 +14,7 @@ const DFS = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [error, setError] = useState('');
   const dropdownRef = useRef(null); // Referenca za dropdown
+  const image = "/src/pages/Courses/slikeDfs/DFS.png";
 
   useEffect(() => {
     const fetchUsername = async () => {
@@ -71,47 +72,47 @@ const DFS = () => {
       document.removeEventListener('mousedown', handleOutsideClick); // Čišćenje eventa
     };
   }, [isDropdownOpen]);
-  
-    const [messages, setMessages] = useState([]);
-    const [formValue, setFormValue] = useState("");
 
-    useEffect(() => {
-        const messagesRef = collection(db, "messages", "rekurzija", "messagesRekurzija");
-        const q = query(messagesRef, orderBy("createdAt", "asc"));
+  const [messages, setMessages] = useState([]);
+  const [formValue, setFormValue] = useState("");
 
-        const unsubscribe = onSnapshot(q, (snapshot) => {
-            const messageData = snapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data(),
-            }));
-            setMessages(messageData);
-        });
+  useEffect(() => {
+    const messagesRef = collection(db, "messages", "dfs", "messagesDfs");
+    const q = query(messagesRef, orderBy("createdAt", "asc"));
 
-        return unsubscribe;
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const messageData = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setMessages(messageData);
+    });
 
-    }, []);
+    return unsubscribe;
+
+  }, []);
 
 
-    const sendMessage = async (e) => {
-        e.preventDefault();
-        if (!formValue.trim()) return;
+  const sendMessage = async (e) => {
+    e.preventDefault();
+    if (!formValue.trim()) return;
 
-        const messagesRef = collection(db, "messages", "rekurzija", "messagesRekurzija");
-        await addDoc(messagesRef, {
-            text: formValue,
-            createdAt: serverTimestamp(),
-            uid: currentUser.uid,
-            displayName: currentUser.displayName || "Anonimni kul user", //Trebalo bi da uvek postoji display name, ali ako neko sjebe sajt zasluzuje da bude "anonimni kul user"
-        });
+    const messagesRef = collection(db, "messages", "dfs", "messagesDfs");
+    await addDoc(messagesRef, {
+      text: formValue,
+      createdAt: serverTimestamp(),
+      uid: currentUser.uid,
+      displayName: currentUser.displayName || "Anonimni kul user", //Trebalo bi da uvek postoji display name, ali ako neko sjebe sajt zasluzuje da bude "anonimni kul user"
+    });
 
-        setFormValue("");
-    };
+    setFormValue("");
+  };
 
-    return (
-        <>
-        <nav className='navbar'>
-          <Link to="/" className="logo"><h1>TSHP</h1></Link>
-          <ul>
+  return (
+    <>
+      <nav className='navbar'>
+        <Link to="/" className="logo"><h1>TSHP</h1></Link>
+        <ul>
           <li><Link to="/courses" className="nav-link username">Lessons</Link></li>
             {!userLoggedIn ? (
               <li><Link to="/login" className="nav-link username">Sign-in</Link></li>
@@ -228,8 +229,8 @@ const DFS = () => {
                 </div>
             </div>
         </div>
-        </>
-    );
+    </>
+  );
 };
 
 export default DFS;
