@@ -44,7 +44,11 @@ const RekurzijaKurs = () => {
 
     return (
         <div className="course-container">
-
+            <div className='open'>
+                <div class="sloj"></div>
+                <div class="sloj"></div>
+                <div class="sloj"></div>
+            </div>
             <div className="sidebar">
                 <h2>Table of Contents</h2>
                 <ul>
@@ -94,7 +98,7 @@ const RekurzijaKurs = () => {
                         </>
                     ) : (
                         <p>
-                            Please <a href="/login">log in</a> to write a comment.
+                            Morate biti ulogovani
                         </p>
                     )}
 
