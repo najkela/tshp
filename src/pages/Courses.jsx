@@ -17,12 +17,12 @@ const Courses = () => {
         <div class="sloj"></div>
         <div class="sloj"></div>
       </div>
-      <h2 className="courses-title">Kursevi</h2>
+      <h2 className="courses-title">Lessons</h2>
       <div className="courses-grid">
         <div className="course-card">
-          <h3>Rekurzija</h3>
-          <p>Rekurzija u matematici i informatici označava postupak ili funkciju koji u svojoj definiciji koriste sami sebe.</p>
-          <button onClick={() => handleButtonClick('rekurzija')}>Pogledaj vise</button>
+          <h3>Recursion</h3>
+          <p>Recursion in mathematics and computer science means a procedure or function that uses itself in its definition.</p>
+          <button onClick={() => handleButtonClick('rekurzija')}>Learn More</button>
         </div>
         <div className="course-card">
           <h3>Course 2</h3>

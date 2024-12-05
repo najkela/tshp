@@ -77,9 +77,9 @@ const Home = () => {
         <nav className='navbar'>
           <Link to="/" className="logo"><h1>TSHP</h1></Link>
           <ul>
-            <li><Link to="/courses" className="nav-link username">Lekcije</Link></li>
+            <li><Link to="/courses" className="nav-link username">Lessons</Link></li>
             {!userLoggedIn ? (
-              <li><Link to="/login" className="nav-link username">Prijavite se</Link></li>
+              <li><Link to="/login" className="nav-link username">Sign-in</Link></li>
             ) : (
               <li className="dropdown" ref={dropdownRef}>
                 <span onClick={toggleDropdown} className="username">{username}</span>
@@ -94,8 +94,10 @@ const Home = () => {
           </ul>
         </nav>
         <div className='content'>
-          <h1>Trica Stikla Penzija</h1>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+          <h1>
+            <span >T</span>hinking, <span>S</span>haring, <span>H</span>elping, <span>P</span>rogramming; <div className="blinking-cursor">|</div>
+          </h1>
+          <p>Perfect community for learning.</p>
 
         </div>
       </div>

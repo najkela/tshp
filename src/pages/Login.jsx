@@ -43,7 +43,7 @@ const Login = () => {
 
     if (isRegistering) {
       if (password !== repeatPassword) {
-        setError('Lozinke se ne podudaraju!');
+        setError('Passwords do not match!');
         return;
       }
       try {
@@ -61,7 +61,7 @@ const Login = () => {
         navigate('/');
       } catch (err) {
         console.error('Greška pri registraciji:', err);
-        setError(err.message);
+        setError("The account probably already exists, please try again");
       }
     } else {
       try {
@@ -69,7 +69,7 @@ const Login = () => {
         navigate('/');
       } catch (err) {
         console.error('Greška pri prijavi:', err);
-        setError(err.message);
+        setError("These credentials do not match, please try again");
       }
     }
   };
@@ -95,7 +95,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h2>{isRegistering ? 'Registrujte se' : 'Prijavite se'}</h2>
+      <h2>{isRegistering ? 'Register' : 'Sign-in'}</h2>
       {error && <p className="error-message">{error}</p>}
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -105,55 +105,55 @@ const Login = () => {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Unesite email"
+            placeholder="Enter email address"
             required
           />
         </div>
         {isRegistering && (
           <div className="form-group">
-            <label htmlFor="username">Korisničko ime:</label>
+            <label htmlFor="username">Username:</label>
             <input
               type="text"
               id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="Unesite korisničko ime"
+              placeholder="Enter username"
               required
             />
           </div>
         )}
         <div className="form-group">
-          <label htmlFor="password">Lozinka:</label>
+          <label htmlFor="password">Password:</label>
           <input
             type="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Unesite lozinku"
+            placeholder="Enter password"
             required
           />
         </div>
         {isRegistering && (
           <div className="form-group">
-            <label htmlFor="repeat-password">Ponovno unesite lozinku:</label>
+            <label htmlFor="repeat-password">Type password again:</label>
             <input
               type="password"
               id="repeat-password"
               value={repeatPassword}
               onChange={(e) => setRepeatPassword(e.target.value)}
-              placeholder="Ponovno unesite lozinku"
+              placeholder="Repeat password"
               required
             />
           </div>
         )}
-        <button type="submit">{isRegistering ? 'Registrujte se' : 'Prijavi se'}</button>
+        <button type="submit">{isRegistering ? 'Register' : 'Signin'}</button>
 
       </form>
 
       <p>
-        {isRegistering ? 'Već imate nalog? ' : 'Nemate nalog? '}
+        {isRegistering ? "Already have an account? " : "Didn't register yet?"}
         <span onClick={handleSwitch} className="switch-link">
-          {isRegistering ? 'Prijavite se' : 'Registrujte se'}
+          {isRegistering ? ' Sign-in' : ' Register'}
         </span>
       </p>
     </div>

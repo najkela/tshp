@@ -98,9 +98,16 @@
 
 .content h1 {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 45px;
   color: #fff;
+}
+
+.content h1 span {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  color: #ffffff;
 }
 
 .content p {
@@ -179,6 +186,48 @@
   100% {
     transform: scaleY(0)
   }
+}
+
+@keyframes blink {
+  0% {
+    border-left-color: transparent;
+  }
+
+  50% {
+    border-left-color: rgb(255, 255, 255);
+  }
+
+  100% {
+    border-left-color: transparent;
+  }
+}
+
+@keyframes highlight {
+  0% {
+    background-color: transparent;
+  }
+
+  50% {
+    background-color: yellow;
+    /* Or any color you prefer */
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+
+.highlight {
+  display: inline-block;
+  animation: highlight 3s forwards infinite;
+}
+
+.blinking-cursor {
+  display: inline-block;
+  width: 10px;
+  color: rgb(255, 255, 255, 0);
+  border-left: 2px solid rgb(255, 255, 255);
+  animation: blink 1s step-end infinite;
 }
 
 .dropdown-menu {
