@@ -114,7 +114,7 @@ const Courses = () => {
           <div className="course-card">
             <h3>DFS Graph Traversal</h3>
             <p>Depth-First Search (DFS) is a graph traversal algorithm that explores as deeply as possible along each branch before backtracking.</p>
-            <button onClick={() => handleButtonClick('course3')}>Start lesson</button>
+            <button onClick={() => handleButtonClick('dfs')}>Start lesson</button>
           </div>
           <div className="course-card">
             <h3>Course 4</h3>

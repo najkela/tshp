@@ -139,65 +139,60 @@ const DFS = () => {
                 <h2>Table of Contents</h2>
                 <ul>
                     <li><a href="#section1">Core Concept</a></li>
-                    <li><a href="#section2">Basic Concept</a></li>
-                    <li><a href="#section3">Every recursive function must have a...</a></li>
-                    <li><a href="#section4">How Does the Computer Execute Recursion?</a></li>
-                    <li><a href="#section5">Problems with Recursion</a></li>
-                    <li><a href="#section6">Applications of Recursion</a></li>
+                    <li><a href="#section2">Steps in DFS:</a></li>
+                    <li><a href="#section3">Pseudocode for DFS</a></li>
+                    <li><a href="#section4">Properties of DFS</a></li>
+                    <li><a href="#section5">Useful Applications of DFS</a></li>
+                    <li><a href="#section6">C++ Implementation</a></li>
                     <li><a href='#comments-section'>Comments section</a></li>
                 </ul>
             </div>
 
 
             <div className="course-content">
-                <h1>Recursion Course</h1>
+                <h1>DFS Graph Traversal</h1>
 
                 <div id="section1">
                     <h2>Core Concept</h2>
-                    <p>
-                        Recursion is a programming technique where a function calls itself to solve a problem by breaking it into smaller, similar subproblems. This technique is crucial for solving tasks that naturally follow a hierarchical structure, such as graphs, trees, and combinatorial tasks where examples are small enough to allow exhaustive exploration of all combinations.
-                    </p>
+                    <p>DFS uses recursion or a stack to traverse nodes deeply in the graph.</p>
                 </div>
 
                 <div id="section2">
-                    <h2>Basic Concept</h2>
-                    <p>
-                        The definition: Recursion is a function that calls itself, either directly or indirectly.
-                    </p>
+                    <h2>Steps in DFS:</h2>
+                    <p> 1. Start from an initial node. </p>
+                    <p> 2. Explore all its unvisited neighbors. </p>
+                    <p> 3. Continue the process until all nodes in the component of that starting node are visited. </p>
+                    <p> DFS can be applied to both directed and undirected graphs. </p>
                 </div>
 
                 <div id="section3">
-                    <h2>Every recursive function must have a...</h2>
-                    <p>1. Base Case: A condition where recursion stops, marking the termination of the recursion.</p>
-                    <p>2. Recursive Step: A function call that addresses a "smaller" or "simpler" problem.</p>
+                    <h2>Pseudocode for DFS</h2>
+                    <p> DFS(u): </p>
+                    <p>     Mark node u as visited </p>
+                    <p>     For each neighbor v of node u: </p>
+                    <p>         If v is not visited: </p>
+                    <p>             DFS(v) </p>
                 </div>
 
                 <div id="section4">
-                    <h2>How Does the Computer Execute Recursion?</h2>
-                    <p>- When a function calls itself, each new call is added to the call stack, where the values of all local variables are stored.</p>
-                    <p>- The function "returns backward" when it encounters the base case or finishes its task.</p>
-                    <p>- Recursive searches and functions can intuitively be visualized as trees.</p>
+                    <h2>Properties of DFS</h2>
+                    <p> - Time Complexity: O(N + M), where N is the number of nodes and M is the number of edges. </p>
+                    <p> - Space Complexity: O(N + M) or O(N^2) depending on how the graph is stored. </p>
                 </div>
 
                 <div id="section5">
-                    <h2>Problems with Recursion</h2>
-                    <p>- Recursive calls consume memory on the stack, which can lead to stack overflow.</p>
-                    <p>- In some cases, recursion can be too slow, especially compared to iterative solutions.</p>
-                    <p>- A good example of slow recursion is determining an element in the Fibonacci sequence. Recursive calculation for N involves summing the recursive results of its two predecessors (N−1 and N−2), causing repeated calculations for the same values.</p>
+                    <h2>Useful Applications of DFS</h2>
+                    <p> - Checking for the existence of a path between two nodes. </p>
+                    <p> - Finding connected components. </p>
+                    <p> - Topological sorting. </p>
+                    <p> - Detecting cycles in a graph. </p>
+                    <p> - Generating a spanning tree with a large height. </p>
+                    <p> - Finding strongly connected components (SCC) in directed graphs. </p>
                 </div>
 
                 <div id="section6">
-                    <h2>Applications of Recursion</h2>
-                    <p>Recursion is used to solve many problems, including:</p>
-                    <p> </p>
-                    <p>Graphs and Trees:</p>
-                    <p>- Depth-First Search (DFS) uses recursion to traverse nodes.</p>
-                    <p>- Counting connected components or finding the deepest node in a tree.</p>
-                    <p>Combinatorics:</p>
-                    <p>- Generating all subsets of a set.</p>
-                    <p>- Finding permutations or combinations of elements.</p>
-                    <p>Dynamic Programming (DP):</p>
-                    <p>- Many DP problems can be solved using recursion with memoization for optimization. </p>
+                    <h2>C++ Implementation:</h2>
+                    <p>...</p>
                 </div>
 
                 <div id="comments-section" className="comments-section">
