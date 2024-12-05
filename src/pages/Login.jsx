@@ -96,7 +96,6 @@ const Login = () => {
 
   return (
   <>
-    <Header />
     <div className="login-container">
       <h2>{isRegistering ? 'Register' : 'Sign-in'}</h2>
       {error && <p className="error-message">{error}</p>}

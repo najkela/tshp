@@ -9,7 +9,6 @@ const App = () => {
     <Router>
       <div>
         <Main />
-        <Footer />
       </div>
     </Router>
   );
