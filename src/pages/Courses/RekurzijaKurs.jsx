@@ -12,10 +12,10 @@ const RekurzijaKurs = () => {
     const [formValue, setFormValue] = useState("");
 
     const images = [
-        "src/pages/Courses/slikeRekurzija/Recursive-approach1.png",
-        "/slikeRekurzija/Recursive-approach2.png",
-        "/slikeRekurzija/Recursive-approach3.png",
-        "/slikeRekurzija/Recursive-approach4.png"
+        "/src/pages/Courses/slikeRekurzija/Recursive-approach1.png",
+        "/src/pages/Courses/slikeRekurzija/Recursive-approach2.png",
+        "/src/pages/Courses/slikeRekurzija/Recursive-approach3.png",
+        "/src/pages/Courses/slikeRekurzija/Recursive-approach4.png"
     ]
 
     const texts = [
@@ -117,7 +117,6 @@ const RekurzijaKurs = () => {
                         </div>
                         <div className="right-section">
                             <img src={images[currentIndex]} alt={`Example ${currentIndex + 1}`} />
-                            <div className="image-container" style={{ backgroundImage: `url(${images[currentIndex]})` }}></div>
                             <div className="buttons">
                                 <button onClick={handlePrev} disabled={currentIndex === 0}>Prev</button>
                                 <button onClick={handleNext} disabled={currentIndex === images.length - 1}>Next</button>
