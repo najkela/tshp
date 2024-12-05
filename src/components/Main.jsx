@@ -6,7 +6,7 @@ import Courses from '../pages/Courses';
 import Home from '../pages/Home';
 import RekurzijaKurs from '../pages/Courses/RekurzijaKurs';
 import GraphTeory from '../pages/Courses/GraphTeory';
-import GraphTeory from '../pages/Courses/DFS';
+import DFS from '../pages/Courses/DFS';
 
 
 const Main = () => {

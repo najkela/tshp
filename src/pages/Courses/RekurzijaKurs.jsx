@@ -9,6 +9,8 @@ import { auth } from '../../firebase-config';
 import { useNavigate } from 'react-router-dom';
 
 const RekurzijaKurs = () => {
+
+  const [currentIndex, setCurrentIndex] = useState(0);
   const { currentUser, userLoggedIn } = useAuth();
   const [username, setUsername] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
