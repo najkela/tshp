@@ -76,9 +76,9 @@ const Home = () => {
 
     <div className="container">
       <div className='open'>
-        <div class="sloj"></div>
-        <div class="sloj"></div>
-        <div class="sloj"></div>
+        <div className="sloj"></div>
+        <div className="sloj"></div>
+        <div className="sloj"></div>
       </div>
       <div className='row'>
         <nav className='navbar'>

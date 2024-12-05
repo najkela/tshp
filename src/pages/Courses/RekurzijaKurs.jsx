@@ -75,6 +75,33 @@ const RekurzijaKurs = () => {
     const [messages, setMessages] = useState([]);
     const [formValue, setFormValue] = useState("");
 
+    const images = [
+        "/src/pages/Courses/slikeRekurzija/Recursive-approach1.png",
+        "/src/pages/Courses/slikeRekurzija/Recursive-approach2.png",
+        "/src/pages/Courses/slikeRekurzija/Recursive-approach3.png",
+        "/src/pages/Courses/slikeRekurzija/Recursive-approach4.png"
+    ]
+
+    const texts = [
+        "1 lorem ipsum dolor sit amet non",
+        "2 lorem ipsum dolor sit amet non",
+        "3 lorem ipsum dolor sit amet non",
+        "4 lorem ipsum dolor sit amet non"
+
+    ]
+
+    const handleNext = () => {
+        if (currentIndex < images.length - 1) {
+            setCurrentIndex(currentIndex + 1);
+        }
+    };
+
+    const handlePrev = () => {
+        if (currentIndex > 0) {
+            setCurrentIndex(currentIndex - 1);
+        }
+    };
+
     useEffect(() => {
         const messagesRef = collection(db, "messages", "rekurzija", "messagesRekurzija");
         const q = query(messagesRef, orderBy("createdAt", "asc"));
@@ -134,7 +161,7 @@ const RekurzijaKurs = () => {
                 <div class="sloj"></div>
                 <div class="sloj"></div>
             </div>
-            
+
             <div className="sidebar">
                 <h2>Table of Contents</h2>
                 <ul>
@@ -144,6 +171,7 @@ const RekurzijaKurs = () => {
                     <li><a href="#section4">How Does the Computer Execute Recursion?</a></li>
                     <li><a href="#section5">Problems with Recursion</a></li>
                     <li><a href="#section6">Applications of Recursion</a></li>
+                    <li><a href="#section7">Examples</a></li>
                     <li><a href='#comments-section'>Comments section</a></li>
                 </ul>
             </div>
@@ -199,6 +227,22 @@ const RekurzijaKurs = () => {
                     <p>Dynamic Programming (DP):</p>
                     <p>- Many DP problems can be solved using recursion with memoization for optimization. </p>
                 </div>
+                
+                <div id="section7">
+                    <h2>Examples</h2>
+                    <div className="examples-container">
+                        <div className="left-section">
+                            <p>{texts[currentIndex]}</p>
+                        </div>
+                        <div className="right-section">
+                            <img src={images[currentIndex]} alt={`Example ${currentIndex + 1}`} />
+                            <div className="buttons">
+                                <button onClick={handlePrev} disabled={currentIndex === 0}>Prev</button>
+                                <button onClick={handleNext} disabled={currentIndex === images.length - 1}>Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div id="comments-section" className="comments-section">
                     <h2>Comments</h2>
@@ -211,7 +255,7 @@ const RekurzijaKurs = () => {
                             </div>
                         ))}
                     </div>
-                    
+
                     <div className='comment-send'>
                         {userLoggedIn ? (
                             <>
