@@ -49,6 +49,7 @@ const RekurzijaKurs = () => {
                 <div class="sloj"></div>
                 <div class="sloj"></div>
             </div>
+            
             <div className="sidebar">
                 <h2>Table of Contents</h2>
                 <ul>
@@ -56,6 +57,7 @@ const RekurzijaKurs = () => {
                     <li><a href="#section2">What is Recursion?</a></li>
                     <li><a href="#section3">Base Case and Recursive Case</a></li>
                     <li><a href="#section4">Examples</a></li>
+                    <li><a href='#comments-section'>Comments section</a></li>
                 </ul>
             </div>
 
@@ -85,30 +87,33 @@ const RekurzijaKurs = () => {
 
                 <div id="comments-section" className="comments-section">
                     <h2>Comments</h2>
-                    {userLoggedIn ? (
-                        <>
-                            <form onSubmit={sendMessage}>
-                                <input
-                                    value={formValue}
-                                    onChange={(e) => setFormValue(e.target.value)}
-                                    placeholder="Write your comment here..."
-                                />
-                                <button type="submit">Send</button>
-                            </form>
-                        </>
-                    ) : (
-                        <p>
-                            Morate biti ulogovani
-                        </p>
-                    )}
 
                     <div className="comments-list">
                         {messages.map((msg) => (
                             <div key={msg.id} className="comment">
-                                <strong>{msg.displayName}:</strong>
+                                <strong>{msg.displayName}: </strong>
                                 <p>{msg.text}</p>
                             </div>
                         ))}
+                    </div>
+                    
+                    <div className='comment-send'>
+                        {userLoggedIn ? (
+                            <>
+                                <form onSubmit={sendMessage}>
+                                    <input
+                                        value={formValue}
+                                        onChange={(e) => setFormValue(e.target.value)}
+                                        placeholder="Write your comment here..."
+                                    />
+                                    <button type="submit">Send</button>
+                                </form>
+                            </>
+                        ) : (
+                            <p>
+                                Morate biti ulogovani
+                            </p>
+                        )}
                     </div>
                 </div>
             </div>

@@ -114,18 +114,7 @@ const Home = () => {
           <p>
             Here will go some description...
           </p>
-          <div className='button-grid'>
-            <div className="button-card">
-              <h3>Enjoy learning</h3>
-              <p>Here you can learn new lections.</p>
-              <button onClick={() => handleButtonClick('courses')}>View courses!</button>
-            </div>
-            <div className='button-card'>
-              <h3>Enjoy practising</h3>
-              <p>Here you can practise new lections.</p>
-              <button onClick={() => handleButtonClick('')}>View tasks!</button>
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>
