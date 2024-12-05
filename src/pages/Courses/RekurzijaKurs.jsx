@@ -116,7 +116,8 @@ const RekurzijaKurs = () => {
                             <p>{texts[currentIndex]}</p>
                         </div>
                         <div className="right-section">
-                            <img src='https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.w3.org%2FMarkUp%2FTest%2Fxhtml-print%2F20050519%2Ftests%2FA_2_1-BF-01.htm&psig=AOvVaw3G8zNOK3hnWNW7Mwcf4CmO&ust=1733518493215000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNiW3-HBkYoDFQAAAAAdAAAAABAE' alt={`Example ${currentIndex + 1}`} />
+                            <img src={images[currentIndex]} alt={`Example ${currentIndex + 1}`} />
+                            <div className="image-container" style={{ backgroundImage: `url(${images[currentIndex]})` }}></div>
                             <div className="buttons">
                                 <button onClick={handlePrev} disabled={currentIndex === 0}>Prev</button>
                                 <button onClick={handleNext} disabled={currentIndex === images.length - 1}>Next</button>
