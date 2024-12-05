@@ -74,7 +74,13 @@ const Home = () => {
   }, [isDropdownOpen]);
 
   return (
+
     <div className="container">
+      <div className='open'>
+        <div class="sloj"></div>
+        <div class="sloj"></div>
+        <div class="sloj"></div>
+      </div>
       <div className='row'>
         <nav className='navbar'>
           <Link to="/" className="logo"><h1>TSHP</h1></Link>
