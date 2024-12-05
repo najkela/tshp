@@ -7,7 +7,6 @@ import Home from '../pages/Home';
 import RekurzijaKurs from '../pages/Courses/RekurzijaKurs';
 import GraphTeory from '../pages/Courses/GraphTeory';
 import DFS from '../pages/Courses/DFS';
-import BFS from '../page/Courses/BFS';
 
 
 const Main = () => {
@@ -23,7 +22,6 @@ const Main = () => {
         <Route path="/courses/rekurzija" element={<RekurzijaKurs />} />
         <Route path="/courses/graph-teory" element={<GraphTeory />} />
         <Route path="/courses/dfs" element={<DFS />} />
-        <Route path="/courses/bfs" element={<BFS />} />
         
       </Routes>
     </main>
