@@ -6,9 +6,37 @@ import { useAuth } from '../../contexts/authContext';
 import './RekurzijaKurs.css';
 
 const RekurzijaKurs = () => {
-    const { currentUser, userLoggedIn } = useAuth();
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const {currentUser, userLoggedIn } = useAuth();
     const [messages, setMessages] = useState([]);
     const [formValue, setFormValue] = useState("");
+
+    const images = [
+        "/slikeRekurzija/Recursive-approach1.png",
+        "/slikeRekurzija/Recursive-approach2.png",
+        "/slikeRekurzija/Recursive-approach3.png",
+        "/slikeRekurzija/Recursive-approach4.png"
+    ]
+
+    const texts = [
+        "1 lorem ipsum dolor sit amet non",
+        "2 lorem ipsum dolor sit amet non",
+        "3 lorem ipsum dolor sit amet non",
+        "4 lorem ipsum dolor sit amet non"
+
+    ]
+
+    const handleNext = () => {
+        if (currentIndex < images.length - 1) {
+            setCurrentIndex(currentIndex + 1);
+        }
+    };
+
+    const handlePrev = () => {
+        if (currentIndex > 0) {
+            setCurrentIndex(currentIndex - 1);
+        }
+    };
 
     useEffect(() => {
         const messagesRef = collection(db, "messages", "rekurzija", "messagesRekurzija");
@@ -49,7 +77,7 @@ const RekurzijaKurs = () => {
                 <div class="sloj"></div>
                 <div class="sloj"></div>
             </div>
-            
+
             <div className="sidebar">
                 <h2>Table of Contents</h2>
                 <ul>
@@ -82,7 +110,19 @@ const RekurzijaKurs = () => {
 
                 <div id="section4">
                     <h2>Examples</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, perspiciatis veritatis. Consectetur sit ipsum nulla, repellat, facere facilis dolor ex minima doloremque provident soluta voluptatum repudiandae odio qui praesentium fuga. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, autem. Beatae in rerum, non aperiam architecto suscipit quam reiciendis quos Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, neque voluptatum sed sint soluta fuga officia ut delectus! Error dicta aspernatur ipsa mollitia corrupti, quas exercitationem sunt officia repellat similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat laudantium iusto cum. Facere nulla maiores deserunt illum assumenda, aliquam commodi minus, fugit cumque placeat similique, repellat eligendi quod! Officia, cupiditate? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate mollitia necessitatibus cupiditate sunt illum perspiciatis expedita modi, praesentium reiciendis voluptates quo explicabo voluptatem fuga ipsa. Minima reiciendis facere eum illo. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita dolorem debitis excepturi natus, iste voluptatibus illo ad cumque architecto quibusdam magnam nam consequuntur, quaerat unde reprehenderit necessitatibus impedit amet nihil! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut enim iste dolores illum velit, eaque laborum corporis! Sint, eveniet, aperiam excepturi nostrum veniam fugiat, explicabo quisquam cupiditate sequi natus aliquam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, rerum laboriosam quibusdam rem, quod a, maiores culpa nam dignissimos iure laudantium eaque. Placeat ex voluptatibus aliquid omnis aperiam laboriosam error. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi minima repudiandae vero impedit quis molestiae dolor rerum voluptas! Necessitatibus nobis cupiditate animi laborum provident minus rerum mollitia ab fugit quisquam. hic cum, eveniet sapiente, nostrum a laudantium aliquid ullam perspiciatis.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, perspiciatis veritatis. Consectetur sit ipsum nulla, repellat, facere facilis dolor ex minima doloremque provident soluta voluptatum repudiandae odio qui praesentium fuga. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, autem. Beatae in rerum, non aperiam architecto suscipit quam reiciendis quos Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, neque voluptatum sed sint soluta fuga officia ut delectus! Error dicta aspernatur ipsa mollitia corrupti, quas exercitationem sunt.</p>
+                    <div className="examples-container">
+                        <div className="left-section">
+                            <p>{texts[currentIndex]}</p>
+                        </div>
+                        <div className="right-section">
+                            <img src={images[currentIndex]} alt={`Example ${currentIndex + 1}`} />
+                            <div className="buttons">
+                                <button onClick={handlePrev} disabled={currentIndex === 0}>Prev</button>
+                                <button onClick={handleNext} disabled={currentIndex === images.length - 1}>Next</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div id="comments-section" className="comments-section">
@@ -96,7 +136,7 @@ const RekurzijaKurs = () => {
                             </div>
                         ))}
                     </div>
-                    
+
                     <div className='comment-send'>
                         {userLoggedIn ? (
                             <>
