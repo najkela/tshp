@@ -114,6 +114,7 @@ const DFS = () => {
         <Link to="/" className="logo"><h1>TSHP</h1></Link>
         <ul>
           <li><Link to="/courses" className="nav-link username">Lessons</Link></li>
+<<<<<<< HEAD
           {!userLoggedIn ? (
             <li><Link to="/login" className="nav-link username">Sign-in</Link></li>
           ) : (
@@ -134,6 +135,122 @@ const DFS = () => {
           <div class="sloj"></div>
           <div class="sloj"></div>
           <div class="sloj"></div>
+=======
+            {!userLoggedIn ? (
+              <li><Link to="/login" className="nav-link username">Sign-in</Link></li>
+            ) : (
+              <li className="dropdown" ref={dropdownRef}>
+                <span onClick={toggleDropdown} className="username">{username}</span>
+                {isDropdownOpen && (
+                  <div className="dropdown-menu">
+                    <p>Score: {currentUser?.score}</p>
+                    <button onClick={handleSignOut} className="dropdown-item">Sign Out</button>
+                  </div>
+                )}
+              </li>
+            )}
+          </ul>
+        </nav>
+        <div className="course-container">
+            <div className='open'>
+                <div class="sloj"></div>
+                <div class="sloj"></div>
+                <div class="sloj"></div>
+            </div>
+            
+            <div className="sidebar">
+                <h2>Table of Contents</h2>
+                <ul>
+                    <li><a href="#section1">Core Concept</a></li>
+                    <li><a href="#section2">Steps in DFS:</a></li>
+                    <li><a href="#section3">Pseudocode for DFS</a></li>
+                    <li><a href="#section4">Properties of DFS</a></li>
+                    <li><a href="#section5">Useful Applications of DFS</a></li>
+                    <li><a href="#section6">C++ Implementation</a></li>
+                    <li><a href='#comments-section'>Comments section</a></li>
+                </ul>
+            </div>
+
+
+            <div className="course-content">
+                <h1>DFS Graph Traversal</h1>
+
+                <div id="section1">
+                    <h2>Core Concept</h2>
+                    <p>DFS uses recursion or a stack to traverse nodes deeply in the graph.</p>
+                </div>
+
+                <div id="section2">
+                    <h2>Steps in DFS:</h2>
+                    <p> 1. Start from an initial node. </p>
+                    <p> 2. Explore all its unvisited neighbors. </p>
+                    <p> 3. Continue the process until all nodes in the component of that starting node are visited. </p>
+                    <p> DFS can be applied to both directed and undirected graphs. </p>
+                </div>
+
+                <div id="section3">
+                    <h2>Pseudocode for DFS</h2>
+                    <p> DFS(u): </p>
+                    <p>     Mark node u as visited </p>
+                    <p>     For each neighbor v of node u: </p>
+                    <p>         If v is not visited: </p>
+                    <p>             DFS(v) </p>
+                </div>
+
+                <div id="section4">
+                    <h2>Properties of DFS</h2>
+                    <p> - Time Complexity: O(N + M), where N is the number of nodes and M is the number of edges. </p>
+                    <p> - Space Complexity: O(N + M) or O(N^2) depending on how the graph is stored. </p>
+                </div>
+
+                <div id="section5">
+                    <h2>Useful Applications of DFS</h2>
+                    <p> - Checking for the existence of a path between two nodes. </p>
+                    <p> - Finding connected components. </p>
+                    <p> - Topological sorting. </p>
+                    <p> - Detecting cycles in a graph. </p>
+                    <p> - Generating a spanning tree with a large height. </p>
+                    <p> - Finding strongly connected components (SCC) in directed graphs. </p>
+                </div>
+
+                <div id="section6">
+                    <h2>C++ Implementation:</h2>
+                    <p>...</p>
+                </div>
+
+                <div id="comments-section" className="comments-section">
+                    <h2>Comments</h2>
+
+                    <div className="comments-list">
+                        {messages.map((msg) => (
+                            <div key={msg.id} className="comment">
+                                <strong>{msg.displayName}: </strong>
+                                <p>{msg.text}</p>
+                            </div>
+                        ))}
+                    </div>
+                    
+                    <div className='comment-send'>
+                        {userLoggedIn ? (
+                            <>
+                                <form onSubmit={sendMessage}>
+                                    <input
+                                        value={formValue}
+                                        onChange={(e) => setFormValue(e.target.value)}
+                                        placeholder="Write your comment here..."
+                                    />
+                                    <button type="submit">Send</button>
+                                </form>
+                            </>
+                        ) : (
+                            <p>
+                                Morate biti ulogovani
+                            </p>
+                        )}
+                    </div>
+                </div>
+            </div>
+>>>>>>> 89ef5abcd260499f03f985f3542f6731819389be
         </div>
 
         <div className="sidebar">
