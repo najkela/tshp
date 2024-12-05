@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
-.home {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  font-family: 'Quicksand', sans-serif;
-}
-
 .container {
   width: 100%;
   min-height: 100vh;
@@ -86,14 +79,17 @@
 
 .content {
   width: 100%;
-  min-height: 100vh;
+  min-height: 20rem;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 10rem;
+  left: 3rem;
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
+}
+
+.moto {
+  align-self: center;
 }
 
 .content h1 {
@@ -112,11 +108,10 @@
 
 .content p {
   font-family: 'Quicksand', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   color: #fff;
 }
 
-/* Dropdown styles */
 .username {
   cursor: pointer;
   padding: 10px 18px;

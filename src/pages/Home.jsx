@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Home.css';
+import AnimatedText from '../components/AnimatedText.jsx';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/authContext';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../firebase-config';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase-config';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const { currentUser, userLoggedIn } = useAuth();
@@ -33,6 +35,12 @@ const Home = () => {
 
     fetchUsername();
   }, [currentUser]);
+
+  const navigate = useNavigate();
+
+  const handleButtonClick = (path) => {
+    navigate(`/${path}`);
+  };
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen); // Togluje dropdown

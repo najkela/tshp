@@ -11,6 +11,7 @@ import { useNavigate } from "react-router";
 import { doc } from 'firebase/firestore';
 import { setDoc } from 'firebase/firestore';
 import { db } from '../firebase-config';
+import Header from '../components/Header';
 
 
 const Login = () => {
@@ -94,6 +95,8 @@ const Login = () => {
   };
 
   return (
+  <>
+    <Header />
     <div className="login-container">
       <h2>{isRegistering ? 'Register' : 'Sign-in'}</h2>
       {error && <p className="error-message">{error}</p>}
@@ -157,6 +160,7 @@ const Login = () => {
         </span>
       </p>
     </div>
+  </>
   );
 };
 

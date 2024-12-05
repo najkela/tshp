@@ -1,6 +1,8 @@
 import React from 'react';
 import './Courses.css';
 import { useNavigate } from 'react-router-dom';
+import '../components/Header';
+import Header from '../components/Header';
 
 const Courses = () => {
 
