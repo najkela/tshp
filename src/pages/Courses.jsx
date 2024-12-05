@@ -104,27 +104,22 @@ const Courses = () => {
           <div className="course-card">
             <h3>Recursion</h3>
             <p>Recursion in mathematics and computer science means a procedure or function that uses itself in its definition.</p>
-            <button onClick={() => handleButtonClick('rekurzija')}>Learn More</button>
+            <button onClick={() => handleButtonClick('rekurzija')}>Start lesson</button>
           </div>
           <div className="course-card">
-            <h3>Course 2</h3>
-            <p>Details about course 2</p>
-            <button onClick={() => handleButtonClick('course2')}>View Details</button>
+            <h3>Graph teory</h3>
+            <p>This and the following lessons will teach the reader about graph theory, one of the key areas in competitive programming.</p>
+            <button onClick={() => handleButtonClick('graph-teory')}>Start lesson</button>
           </div>
           <div className="course-card">
-            <h3>Course 3</h3>
-            <p>Details about course 3</p>
-            <button onClick={() => handleButtonClick('course3')}>View Details</button>
+            <h3>DFS Graph Traversal</h3>
+            <p>Depth-First Search (DFS) is a graph traversal algorithm that explores as deeply as possible along each branch before backtracking.</p>
+            <button onClick={() => handleButtonClick('course3')}>Start lesson</button>
           </div>
           <div className="course-card">
             <h3>Course 4</h3>
             <p>Details about course 4</p>
             <button onClick={() => handleButtonClick('course4')}>View Details</button>
-          </div>
-          <div className="course-card">
-            <h3>Course 5</h3>
-            <p>Details about course 5</p>
-            <button onClick={() => handleButtonClick('course5')}>View Details</button>
           </div>
         </div>
       </div>

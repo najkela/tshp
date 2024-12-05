@@ -5,6 +5,8 @@ import Login from '../pages/Login';
 import Courses from '../pages/Courses';
 import Home from '../pages/Home';
 import RekurzijaKurs from '../pages/Courses/RekurzijaKurs';
+import GraphTeory from '../pages/Courses/GraphTeory';
+import GraphTeory from '../pages/Courses/DFS';
 
 
 const Main = () => {
@@ -16,7 +18,10 @@ const Main = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/" element={<Home />} />
+
         <Route path="/courses/rekurzija" element={<RekurzijaKurs />} />
+        <Route path="/courses/graph-teory" element={<GraphTeory />} />
+        <Route path="/courses/dfs" element={<DFS />} />
         
       </Routes>
     </main>

@@ -1,14 +1,14 @@
 import { collection, query, orderBy, addDoc, onSnapshot, serverTimestamp, doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase-config';
 import { useAuth } from '../../contexts/authContext';
-import './RekurzijaKurs.css';
+import './GraphTeory.css';
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase-config';
 import { useNavigate } from 'react-router-dom';
 
-const RekurzijaKurs = () => {
+const GraphTeory = () => {
   const { currentUser, userLoggedIn } = useAuth();
   const [username, setUsername] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -138,66 +138,45 @@ const RekurzijaKurs = () => {
             <div className="sidebar">
                 <h2>Table of Contents</h2>
                 <ul>
-                    <li><a href="#section1">Recursion in Competitive Programming</a></li>
-                    <li><a href="#section2">Basic Concept</a></li>
-                    <li><a href="#section3">Every recursive function must have a...</a></li>
-                    <li><a href="#section4">How Does the Computer Execute Recursion?</a></li>
-                    <li><a href="#section5">Problems with Recursion</a></li>
-                    <li><a href="#section6">Applications of Recursion</a></li>
+                    <li><a href="#section1">Graph Theory (definition)</a></li>
+                    <li><a href="#section2">Key Terms and Definitions:</a></li>
                     <li><a href='#comments-section'>Comments section</a></li>
                 </ul>
             </div>
 
 
             <div className="course-content">
-                <h1>Recursion Course</h1>
+                <h1>Graph Theory</h1>
 
                 <div id="section1">
-                    <h2>Recursion in Competitive Programming</h2>
-                    <p>
-                        Recursion is a programming technique where a function calls itself to solve a problem by breaking it into smaller, similar subproblems. This technique is crucial for solving tasks that naturally follow a hierarchical structure, such as graphs, trees, and combinatorial tasks where examples are small enough to allow exhaustive exploration of all combinations.
-                    </p>
+                    <h2>Graph Theory (definition)</h2>
+                    <p>A graph is a structure consisting of vertices (nodes) and edges that connect them. It is a practical way to represent sets of elements and their mutual dependencies or connections.</p>
+                    <p> </p>
+                    <p>Edges in graphs can be either directed or undirected (bidirectional), and they may also have weights, regardless of direction.</p>
+                    <p> </p>
+                    <p>- A directed edge (uv) means you can travel from vertex u to vertex v.</p>
+                    <p>- An undirected edge (u) means you can travel between u and v in both directions.</p>
+                    <p>- A weighted edge (uv, w) means traveling from u to v has a specific cost or weight w.</p>
                 </div>
 
                 <div id="section2">
-                    <h2>Basic Concept</h2>
-                    <p>
-                        The definition: Recursion is a function that calls itself, either directly or indirectly.
-                    </p>
-                </div>
-
-                <div id="section3">
-                    <h2>Every recursive function must have a...</h2>
-                    <p>1. Base Case: A condition where recursion stops, marking the termination of the recursion.</p>
-                    <p>2. Recursive Step: A function call that addresses a "smaller" or "simpler" problem.</p>
-                </div>
-
-                <div id="section4">
-                    <h2>How Does the Computer Execute Recursion?</h2>
-                    <p>- When a function calls itself, each new call is added to the call stack, where the values of all local variables are stored.</p>
-                    <p>- The function "returns backward" when it encounters the base case or finishes its task.</p>
-                    <p>- Recursive searches and functions can intuitively be visualized as trees.</p>
-                </div>
-
-                <div id="section5">
-                    <h2>Problems with Recursion</h2>
-                    <p>- Recursive calls consume memory on the stack, which can lead to stack overflow.</p>
-                    <p>- In some cases, recursion can be too slow, especially compared to iterative solutions.</p>
-                    <p>- A good example of slow recursion is determining an element in the Fibonacci sequence. Recursive calculation for N involves summing the recursive results of its two predecessors (N−1 and N−2), causing repeated calculations for the same values.</p>
-                </div>
-
-                <div id="section6">
-                    <h2>Applications of Recursion</h2>
-                    <p>Recursion is used to solve many problems, including:</p>
+                    <h2>Key Terms and Definitions:</h2>
                     <p> </p>
-                    <p>Graphs and Trees:</p>
-                    <p>- Depth-First Search (DFS) uses recursion to traverse nodes.</p>
-                    <p>- Counting connected components or finding the deepest node in a tree.</p>
-                    <p>Combinatorics:</p>
-                    <p>- Generating all subsets of a set.</p>
-                    <p>- Finding permutations or combinations of elements.</p>
-                    <p>Dynamic Programming (DP):</p>
-                    <p>- Many DP problems can be solved using recursion with memoization for optimization. </p>
+                    <p>- Degree of a vertex: The number of edges that connect to or from a vertex.</p>
+                    <p>- Traversal: Moving through vertices via the edges that connect them.</p>
+                    <p>- Walk: A traversal where vertices and edges may repeat.</p>
+                    <p>- Trail: A walk where edges may not repeat.</p>
+                    <p>- Path: A trail where vertices may not repeat.</p>
+                    <p>- Cycle: A "path" that starts and ends at the same vertex.</p>
+                    <p>- A graph is cyclic if it contains cycles, and acyclic otherwise.</p>
+                    <p>- Connected component: A part of an undirected graph where there is a path between any two vertices.</p>
+                    <p>- Strongly connected component (SCC): A part of a directed graph where there is a path between any two vertices.</p>
+                    <p>- A graph is connected if it has exactly one connected component.</p>
+                    <p>- Tree: A connected graph with N vertices and N - 1 edges. </p>
+                    <p>- In a tree, there is exactly one path between any two vertices.</p>
+                    <p>- DAG (Directed Acyclic Graph): A directed graph with no cycles.</p>
+                    <p>- Spanning tree (ST): A tree that contains all N vertices of a connected graph, using exactly N - 1 edges.</p>
+                    <p>- Minimum Spanning Tree (MST): A spanning tree of a weighted graph with the minimum total weight of edges.</p>
                 </div>
 
                 <div id="comments-section" className="comments-section">
@@ -237,4 +216,4 @@ const RekurzijaKurs = () => {
     );
 };
 
-export default RekurzijaKurs;
+export default GraphTeory;
