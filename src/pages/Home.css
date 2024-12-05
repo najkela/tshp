@@ -259,3 +259,10 @@
 .dropdown-item:hover {
   background-color: #246f62;
 }
+
+@media screen and (max-width: 768px) {
+  .content {
+    display: none;
+    width: 0%;
+  }
+}
