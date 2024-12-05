@@ -90,6 +90,7 @@ const Home = () => {
         <div className='content'>
           <h1>Trica Stikla Penzija</h1>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+          
         </div>
       </div>
     </div>

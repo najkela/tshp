@@ -15,9 +15,9 @@ const Courses = () => {
       <h2 className="courses-title">Kursevi</h2>
       <div className="courses-grid">
         <div className="course-card">
-          <h3>Course 1</h3>
-          <p>Details about course 1</p>
-          <button onClick={() => handleButtonClick('course1')}>View Details</button>
+          <h3>Rekurzija</h3>
+          <p>Rekurzija u matematici i informatici označava postupak ili funkciju koji u svojoj definiciji koriste sami sebe.</p>
+          <button onClick={() => handleButtonClick('rekurzija')}>Pogledaj vise</button>
         </div>
         <div className="course-card">
           <h3>Course 2</h3>
